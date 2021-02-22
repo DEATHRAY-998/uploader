@@ -175,17 +175,17 @@ async def echo(bot, update):
                 if "filesize" in formats:
                     approx_file_size = humanbytes(formats["filesize"])
                 cb_string_video = "{}|{}|{}".format(
-                    "video",  format_ext)
+                    "video",format_id,  format_ext)
                 cb_string_file = "{}|{}|{}".format(
-                    "file", format_ext)
+                    "file",format_id, format_ext)
                 if format_string is not None and not "audio only" in format_string:
                     ikeyboard = [
                         InlineKeyboardButton(
-                            "S " + format_string + " video " + approx_file_size + " ",
+                            "" + format_string + " video " + approx_file_size + " ",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
                         InlineKeyboardButton(
-                            "D " + format_ext + " " + approx_file_size + " ",
+                            "" + format_ext + " " + approx_file_size + " ",
                             callback_data=(cb_string_file).encode("UTF-8")
                         )
                     ]
@@ -203,13 +203,13 @@ async def echo(bot, update):
                     # special weird case :\
                     ikeyboard = [
                         InlineKeyboardButton(
-                            "SVideo [" +
+                            "Video [" +
                             "] ( " +
                             approx_file_size + " )",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
                         InlineKeyboardButton(
-                            "DFile [" +
+                            "File [" +
                             "] ( " +
                             approx_file_size + " )",
                             callback_data=(cb_string_file).encode("UTF-8")
