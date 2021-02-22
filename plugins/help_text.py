@@ -23,7 +23,7 @@ import pyrogram
 from telethon.sync import TelegramClient,events,Button
 from telethon import custom, events, Button, functions
 import telethon
-from sql import *
+
 from telethon.tl.types import (
     Channel,
     Chat,
