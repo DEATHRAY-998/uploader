@@ -48,7 +48,7 @@ async def button(bot, update):
     cb_data = update.data
     if ":" in cb_data:
         # unzip formats
-        extract_dir_path = Config.DOWNLOAD_LOCATIONs + \
+        extract_dir_path = Config.DOWNLOAD_LOCATION + \
             "/" + str(update.from_user.id) + "zipped" + "/"
         if not os.path.isdir(extract_dir_path):
             await bot.delete_messages(
