@@ -155,7 +155,7 @@ async def echo(bot, update):
         if "\n" in x_reponse:
             x_reponse, _ = x_reponse.split("\n")
         response_json = json.loads(x_reponse)
-        save_ytdl_json_path = Config.DOWNLOAD_LOCATIONs + \
+        save_ytdl_json_path = Config.DOWNLOAD_LOCATION + \
             "/" + str(update.from_user.id) + ".json"
         with open(save_ytdl_json_path, "w", encoding="utf8") as outfile:
             json.dump(response_json, outfile, ensure_ascii=False)
@@ -271,7 +271,7 @@ async def echo(bot, update):
                 thumbnail_image = response_json["thumbnail"]
         thumb_image_path = DownLoadFile(
             thumbnail_image,
-            Config.DOWNLOAD_LOCATIONs + "/" +
+            Config.DOWNLOAD_LOCATION+ "/" +
             str(update.from_user.id) + ".webp",
             Config.CHUNK_SIZE,
             None,  # bot,
