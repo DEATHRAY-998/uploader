@@ -18,7 +18,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 if __name__ == "__main__" :
     # create download directory, if not exist
-    print(Config.DOWNLOAD_LOCATIONs)
+
     if not os.path.isdir(Config.DOWNLOAD_LOCATIONs):
         os.makedirs(Config.DOWNLOAD_LOCATIONs)
     plugins = dict(
